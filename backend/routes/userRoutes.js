@@ -1,9 +1,16 @@
-const { config } = require('dotenv')
-const express = require('express')
-const router = express.Router()
-const {registerUser, loginUser} = require('../controllers/userController')
+const { config } = require("dotenv");
+const express = require("express");
+const router = express.Router();
+const {
+  registerUser,
+  loginUser,
+  getMe,
+} = require("../controllers/userController");
 
-router.post('/', registerUser)
-router.post('/login', loginUser)
+const { protect } = require("../Middleware/authMiddleware");
 
-module.exports = router
+router.post("/", registerUser);
+router.post("/login", loginUser);
+router.get("/me", protect, getMe);
+
+module.exports = router;
