@@ -5,7 +5,7 @@ const Ticket = require("../models/ticketModel");
 const { rawListeners } = require("../models/ticketModel");
 
 // @desc    Get user tickets
-// @route   GET /api/getTickets
+// @route   GET /api/tickets
 // @access  Private
 const getTickets = asyncHandler(async (req, res) => {
   // get user from id in JWT
@@ -21,7 +21,7 @@ const getTickets = asyncHandler(async (req, res) => {
 });
 
 // @desc    Get user tickets
-// @route   GET /api/getTickets/:id
+// @route   GET /api/tickets/:id
 // @access  Private
 const getTicket = asyncHandler(async (req, res) => {
   // get user from id in JWT
@@ -48,7 +48,7 @@ const getTicket = asyncHandler(async (req, res) => {
 });
 
 // @desc    Create user ticket
-// @route   POST /api/createTicket
+// @route   POST /api/tickets
 // @access  Private
 const createTicket = asyncHandler(async (req, res) => {
   const { product, description } = req.body;
@@ -73,11 +73,11 @@ const createTicket = asyncHandler(async (req, res) => {
     status: "new",
   });
 
-  res.status(200).json(ticket);
+  res.status(201).json(ticket);
 });
 
 // @desc    Delete user tickets
-// @route   DELETE /api/getTickets/:id
+// @route   DELETE /api/tickets/:id
 // @access  Private
 const deleteTicket = asyncHandler(async (req, res) => {
   // get user from id in JWT
@@ -106,7 +106,7 @@ const deleteTicket = asyncHandler(async (req, res) => {
 });
 
 // @desc    Update user tickets
-// @route   PUT /api/getTickets/:id
+// @route   PUT /api/tickets/:id
 // @access  Private
 const updateTicket = asyncHandler(async (req, res) => {
   // get user from id in JWT

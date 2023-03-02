@@ -17,7 +17,7 @@ function Header() {
 
   return (
     <header className="header">
-      <div className="logo">
+      <div className="logo large-logo">
         <Link to="/">Codec Support</Link>
       </div>
       <ul>

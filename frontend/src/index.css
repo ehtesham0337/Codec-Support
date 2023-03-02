@@ -43,6 +43,11 @@ h3 {
   text-align: center;
 }
 
+.large-logo {
+  font-size: 24px;
+  font-weight: 600;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -113,6 +118,7 @@ h3 {
 .form {
   width: 70%;
   margin: 0 auto;
+  padding-bottom: 30px;
 }
 
 .form-group {
@@ -128,6 +134,7 @@ h3 {
   border-radius: 5px;
   margin-bottom: 10px;
   font-family: inherit;
+  resize: none;
 }
 
 .form-group label {
