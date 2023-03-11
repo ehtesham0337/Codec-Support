@@ -30,7 +30,8 @@ function Register() {
     }
 
     if (isSuccess || user) {
-      navigate("/");
+      if(isSuccess) {toast.success("Registered successfully")};
+      navigate("/"); 
     }
 
     dispatch(reset());

@@ -17,7 +17,7 @@ function Home() {
       </Link>
       <Link to="/tickets">
         <button className="btn btn-block">
-          <FaTicketAlt /> View My Ticket
+          <FaTicketAlt /> View My Tickets
         </button>
       </Link>
     </div>

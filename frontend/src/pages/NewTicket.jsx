@@ -9,7 +9,7 @@ import { createTicket, reset } from "../features/tickets/ticketSlice";
 const NewTicket = () => {
   const { user } = useSelector((state) => state?.auth);
   const { isError, isSuccess, isLoading, message } = useSelector(
-    (state) => state?.ticket
+    (state) => state?.tickets
   );
   const [name] = useState(user?.name);
   const [email] = useState(user?.email);
@@ -24,6 +24,7 @@ const NewTicket = () => {
     }
 
     if (isSuccess) {
+      toast.success("Ticket created");
       dispatch(reset());
       navigate("/tickets");
     }
@@ -41,7 +42,7 @@ const NewTicket = () => {
   }
   return (
     <>
-      <BackButton url="/" className="btn btn-reverse btn-block" />
+      <BackButton url="/"  />
       <section className="heading">
         <h1>Create a Ticket</h1>
         <p>Please fill out the form below</p>
@@ -70,8 +71,12 @@ const NewTicket = () => {
               }}
             >
               <option value="iPhone">iPhone</option>
-              <option value="Macbook Pro">Macbook Pro</option>
+              <option value="MacBook Pro">MacBook Pro</option>
               <option value="iMac">iMac</option>
+              <option value="iPad">iPad</option>
+              <option value="Apple Watch">Apple Watch</option>
+              <option value="Samsung Galaxy S">Samsung Galaxy S</option>
+              <option value="Samsung Active 2">Samsung Active 2</option>
             </select>
           </div>
 
