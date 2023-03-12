@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaSignInAlt, FaSignOutAlt, FaUser } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { logout, reset } from "../features/auth/authSlice";
+import logo from "../assets/walkie-talkie.png";
 
 function Header() {
   const navigate = useNavigate();
@@ -18,7 +19,16 @@ function Header() {
   return (
     <header className="header">
       <div className="logo large-logo">
-        <Link to="/">Codec Support</Link>
+        <Link to="/" style={{ display: "flex" }}>
+          <img
+            alt="logo"
+            style={{ width: "60px", height: "55px" }}
+            src={logo}
+          />
+          <h3 style={{ alignSelf: "center", paddingTop: "12px" }}>
+            Codec Support
+          </h3>
+        </Link>
       </div>
       <ul>
         {user ? (
