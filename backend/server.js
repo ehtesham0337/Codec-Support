@@ -14,6 +14,16 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+app.options("/", (req, res) => {
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "http://codec-support.netlify.app"
+  );
+  res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  res.sendStatus(204);
+});
+
 app.get("/", (req, res) => {
   res.status(200).send("Welcome to CodecSupport API");
 });
@@ -35,14 +45,6 @@ if (process.env.NODE_ENV === "production") {
     res.status(200).send("Welcome to CodecSupport API");
   });
 }
-
-app.use(function (req, res, next) {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-  res.setHeader("Access-Control-Allow-Credentials", true);
-  next();
-});
 
 app.use(errorHandler);
 
