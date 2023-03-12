@@ -6,7 +6,11 @@ import BackButton from "../components/BackButton";
 import NoteItem from "../components/NoteItem";
 import Spinner from "../components/Spinner";
 import { createNote, getNotes } from "../features/notes/noteSlice";
-import { closeTicket, getTicket } from "../features/tickets/ticketSlice";
+import {
+  closeTicket,
+  getTicket,
+  getTickets,
+} from "../features/tickets/ticketSlice";
 import empty from "../assets/No data Found.gif";
 import Modal from "react-modal";
 import { FaPlus } from "react-icons/fa";
@@ -61,6 +65,7 @@ function SingleTicket() {
   // Close Ticket
   const onTicketClose = () => {
     dispatch(closeTicket(ticketId));
+    dispatch(getTickets());
     toast.success("Ticket closed");
     navigate("/tickets");
   };
