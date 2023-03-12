@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.get("/", (req, res) => {
-  res.status(200).send("Welcome to CodecSupport");
+  res.status(200).send("Welcome to CodecSupport API");
 });
 
 // Routes
@@ -32,7 +32,7 @@ if (process.env.NODE_ENV === "production") {
   );
 } else {
   app.get("/", (req, res) => {
-    res.status(200).send("Welcome to CodecSupport");
+    res.status(200).send("Welcome to CodecSupport API");
   });
 }
 
