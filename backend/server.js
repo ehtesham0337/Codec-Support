@@ -25,12 +25,7 @@ app.use("/api/tickets", require("./routes/ticketRoutes"));
 // serve frontend
 if (process.env.NODE_ENV === "production") {
   // set build folder
-  app.use(
-    express.static(
-      path.join("https://codec-support-production-b120.up.railway.app/")
-    )
-  );
-  // app.use(express.static(path.join(__dirname, "../frontend/build")));
+  app.use(express.static(path.join(__dirname, "../frontend/build")));
 
   app.get("*", (req, res) =>
     res.sendFile(__dirname, "../", "frontend", "build", "index.html")

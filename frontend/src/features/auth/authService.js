@@ -1,5 +1,6 @@
 import axios from "axios";
-const API_URL = "/api/users";
+const API_URL =
+  "https://codec-support-production-b120.up.railway.app/api/users";
 
 // register user
 const register = async (userData) => {
