@@ -31,7 +31,7 @@ function Tickets() {
     <>
       <BackButton url="/" />
       <h1>Tickets</h1>
-      <div className="tickets">
+      <div className="tickets" style={{ paddingBottom: "30px" }}>
         <div className="ticket-headings">
           <div>Date</div>
           <div>Product</div>

@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import BackButton from "../components/BackButton";
 import NoteItem from "../components/NoteItem";
 import Spinner from "../components/Spinner";
-import { getNotes } from "../features/notes/noteSlice";
+import { createNote, getNotes } from "../features/notes/noteSlice";
 import { closeTicket, getTicket } from "../features/tickets/ticketSlice";
 import empty from "../assets/No data Found.gif";
 import Modal from "react-modal";
@@ -68,7 +68,7 @@ function SingleTicket() {
   // Submit note
   const onNoteSubmit = (e) => {
     e.preventDefault();
-    console.log("hey");
+    dispatch(createNote({ noteText, ticketId }));
     closeModal();
   };
 
@@ -99,7 +99,7 @@ function SingleTicket() {
             {new Date(ticket.createdAt).toLocaleString("en-US", options)}
           </h3>
         </div>
-        <div style={{ display: "flex" }}>
+        <div style={{ display: "flex", paddingBottom: "10px" }}>
           <h3 style={{ paddingRight: "10px" }}>Product: </h3>
           <h3 style={{ color: "#4E4C57" }}>{ticket.product}</h3>
         </div>
@@ -109,7 +109,10 @@ function SingleTicket() {
           <h3>Description of Issue</h3>
           <p>{ticket.description}</p>
         </div>
-        <h2>
+
+        <hr />
+
+        <h2 style={{ paddingTop: "20px" }}>
           Notes
           {ticket.status !== "closed" && (
             <button
@@ -147,7 +150,7 @@ function SingleTicket() {
             ></textarea>
           </div>
           <div className="form-group">
-            <button className="btn">Submit</button>
+            <button className="btn-black">Submit</button>
           </div>
         </form>
       </Modal>
