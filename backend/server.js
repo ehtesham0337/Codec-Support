@@ -13,12 +13,14 @@ connectDB();
 const app = express();
 app.use(cors());
 app.options("http://codec-support.netlify.app", cors());
+app.options("http://localhost:3000", cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.options("/", (req, res) => {
   res.setHeader(
     "Access-Control-Allow-Origin",
+    "http://localhost:3001",
     "http://codec-support.netlify.app"
   );
   res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT");
