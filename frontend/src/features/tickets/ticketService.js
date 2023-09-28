@@ -1,6 +1,6 @@
 import axios from "axios";
 const API_URL =
-  "https://codec-support-production-b120.up.railway.app/api/tickets";
+  "https://localhost:5000/api/tickets";
 
 // Create new ticket
 const createTicket = async (ticketData, token) => {

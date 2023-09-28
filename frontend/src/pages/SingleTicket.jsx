@@ -65,9 +65,9 @@ function SingleTicket() {
   // Close Ticket
   const onTicketClose = () => {
     dispatch(closeTicket(ticketId));
-    dispatch(getTickets());
     toast.success("Ticket closed");
     navigate("/tickets");
+    dispatch(getTickets());
   };
 
   // Submit note

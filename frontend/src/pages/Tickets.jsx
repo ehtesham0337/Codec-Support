@@ -12,16 +12,16 @@ function Tickets() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch(getTickets());
+  }, [dispatch]);
+
+  useEffect(() => {
     return () => {
       if (isSuccess) {
         dispatch(reset());
       }
     };
   }, [dispatch, isSuccess]);
-
-  useEffect(() => {
-    dispatch(getTickets());
-  }, [dispatch]);
 
   if (isLoading) {
     return <Spinner />;
