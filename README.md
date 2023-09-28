@@ -10,6 +10,9 @@ Built using the MERN stack.
 
 https://codec-support.netlify.app/
 
+# Postman API Documentation
+
+Find the API documentation [here.](https://documenter.getpostman.com/view/24684635/2s9YJZ4Q1W)
 
 # Steps to run
 
@@ -41,7 +44,14 @@ $ npm install
 $ npm start
 ```
 
-## P.S. Backend is deployed on [Railway](https://railway.app/). If APIs don't work on the live site, open the project in VSCode, search for "railway" using ```CTRL+SHIFT+F``` and replace with ```http://localhost:5000/api/{insert route here}```
+# Create .env
+```
+NODE_ENV = development_or_production
+PORT = 5000
+MONGO_URI = mongo_uri
+JWT_SECRET = your_secret
+```
+
 
 
 
