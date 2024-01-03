@@ -1,6 +1,6 @@
 import axios from "axios";
 const API_URL =
-  "http://localhost:5000/api/tickets";
+  "https://codec-support.azurewebsites.net/api/tickets";
 
 // Create new ticket
 const createTicket = async (ticketData, token) => {

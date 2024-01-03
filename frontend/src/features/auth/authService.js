@@ -1,6 +1,6 @@
 import axios from "axios";
 const API_URL =
-  "http://localhost:5000/api/users";
+  "https://codec-support.azurewebsites.net/api/users";
 
 // register user
 const register = async (userData) => {
