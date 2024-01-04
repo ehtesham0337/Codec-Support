@@ -1,6 +1,6 @@
 import axios from "axios";
 const API_URL =
-  "https://codec-support.azurewebsites.net/api/users";
+  "https://relieved-tan-top-coat.cyclic.app/api/users";
 
 // register user
 const register = async (userData) => {

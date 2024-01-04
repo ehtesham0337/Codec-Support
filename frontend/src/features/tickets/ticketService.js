@@ -1,6 +1,6 @@
 import axios from "axios";
 const API_URL =
-  "https://codec-support.azurewebsites.net/api/tickets";
+  "https://relieved-tan-top-coat.cyclic.app/api/tickets";
 
 // Create new ticket
 const createTicket = async (ticketData, token) => {
