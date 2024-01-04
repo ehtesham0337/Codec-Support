@@ -7,8 +7,7 @@ const { errorHandler } = require("./Middleware/errorMiddleware");
 const connectDB = require("./config/db");
 const PORT = process.env.PORT || 8080;
 
-// Connect to database
-connectDB();
+
 
 const app = express();
 app.use(cors());
@@ -51,5 +50,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.use(errorHandler);
-
-app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+// Connect to database
+connectDB().then(() => {
+  app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+});
